@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/*
+ * K12 智学 · 全局配色 Token（唯一来源：docs/style.md）
+ * 全学段统一暖橘红主题；禁 emoji、禁吉祥物与装饰元素、禁大面积纯白/纯黑
+ */
+@theme {
+  --color-page: #faf1e8; /* 页面底色（暖米） */
+  --color-card: #fff8f0; /* 卡片/题目卡 */
+  --color-elevated: #fffdf9; /* 弹层/悬浮层 */
+  --color-ink: #43302a; /* 正文（暖棕黑） */
+  --color-ink-secondary: #7a5c4d; /* 辅助文字 */
+  --color-primary: #d9541f; /* 主操作（橘红） */
+  --color-primary-strong: #c44715; /* 主操作 hover/按下 */
+  --color-primary-soft: #fbe3d4; /* 选中底/浅橘背景 */
+  --color-on-primary: #fff6ee; /* 主色按钮文字（加粗） */
+  --color-success: #5e9c68; /* 正确反馈 */
+  --color-error: #c9503f; /* 错误反馈（柔和） */
+  --color-warning: #e8a33d; /* 警示/激励点缀 */
+  --color-chain: #e3c9af; /* 星链连接线（虚线） */
+  --color-star-done: #e9a063; /* 星球-已完成 */
+  --color-star-done-border: #c77b4b;
+  --color-star-locked: #d8c7b8; /* 星球-未解锁 */
+  --color-star-locked-border: #c4b2a2;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui,
+    sans-serif;
+}
+
+/* 夜间模式：暖深棕底、低蓝光（html data-mode="night"） */
+[data-mode="night"] {
+  --color-page: #2a211b;
+  --color-card: #352921;
+  --color-elevated: #3f3129;
+  --color-ink: #f2e3d5;
+  --color-ink-secondary: #c4a896;
+  --color-primary: #e8743f;
+  --color-primary-strong: #f08a57;
+  --color-primary-soft: #4a3428;
+  --color-on-primary: #2a211b;
+  --color-success: #7fb889;
+  --color-error: #d97b6c;
+  --color-warning: #e8b45c;
+  --color-chain: #4a3b30;
+  --color-star-done: #b87b4e;
+  --color-star-done-border: #8f5e38;
+  --color-star-locked: #5a4c42;
+  --color-star-locked-border: #4a3b30;
+}
+
+body {
+  @apply bg-page font-sans text-ink antialiased;
+}

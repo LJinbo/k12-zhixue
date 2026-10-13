@@ -1,0 +1,15 @@
+{
+  "name": "zhixue-project",
+  "version": "0.1.0",
+  "private": true,
+  "description": "K12 智学系统 monorepo（AI 引导教学 + 错题闭环 + 家长监督）",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:server": "pnpm --filter server start:dev",
+    "dev:web": "pnpm --filter web dev",
+    "build:server": "pnpm --filter server build",
+    "build:web": "pnpm --filter web build"
+  }
+}
