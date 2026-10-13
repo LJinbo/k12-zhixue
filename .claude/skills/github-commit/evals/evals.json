@@ -1,0 +1,23 @@
+{
+  "skill_name": "github-commit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这是我的一个小项目，代码在 C:/Users/li/AppData/Local/Temp/gc-eval/fixtures/e1-ws。请把代码提交到 GitHub：仓库名用 skill-test-gc-1，设为私有。完成后把结果写成 report.md 保存到 .../eval-1-init-full-push/with_skill/outputs/report.md，内容包括：创建/使用的仓库全名、推送的文件清单、使用的提交信息、跳过的文件及原因（如有）、以及 .claude/github-sync.json 的最终内容（如果你写了这个文件）。不要删除已创建的仓库。",
+      "expected_output": "私有仓库 LJinbo/skill-test-gc-1 被创建；夹具的 6 个文本文件（package.json、README.md、src/index.js、src/util.js、docs/design.md、.gitignore）全部推送到默认分支 main；本地生成 git 提交并关联了 remote；写出了 .claude/github-sync.json（owner/repo/branch/lastSyncedCommit）",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "项目在 C:/Users/li/AppData/Local/Temp/gc-eval/fixtures/e2-ws，远程仓库是 LJinbo/skill-test-gc-2（已存在）。我改了一些东西还没提交，请帮我把这次的改动提交到 GitHub。完成后把结果写成 report.md 保存到 .../eval-2-incremental-small/with_skill/outputs/report.md，内容包括：推送到的分支、本次推送了哪些文件、提交信息、以及 .claude/github-sync.json 的最终内容（如果你维护这个文件）。不要删除仓库。",
+      "expected_output": "增量识别出恰好 3 个变更文件（README.md、src/index.js 修改 + src/helper.js 新增），只推这 3 个到 main；本地先做 git 提交；推后 .claude/github-sync.json 的 lastSyncedCommit 更新为新本地 HEAD；未把无关文件推上去",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "项目在 C:/Users/li/AppData/Local/Temp/gc-eval/fixtures/e3-ws，远程仓库是 LJinbo/skill-test-gc-3（已存在）。我这轮改动比较多，请帮我把改动提交到 GitHub。完成后把结果写成 report.md 保存到 .../eval-3-incremental-large-pr/with_skill/outputs/report.md，内容包括：采用的策略（直接推主分支还是建分支+PR）、分支名、PR 链接（如有）、推送的文件数。不要合并或关闭 PR，不要删除仓库。",
+      "expected_output": "识别出 7 个变更文件（>5），走新建分支 + create_pull_request 路径而非直推 main；PR base 为 main、head 为新分支；main 上没有直接的增量提交；PR 描述带 Claude Code 署名",
+      "files": []
+    }
+  ]
+}
